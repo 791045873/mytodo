@@ -1,13 +1,12 @@
 import React, {Component, PropTypes} from 'react'
 import inputComponent from '../component/input';
 import {add} from '../reducer/todo';
-import checkAll from 'checkAll';
 import {connect} from 'react-redux'
 
 class inputContainer extends Component{
     static PropTypes = {
         submit: PropTypes.func,
-        message: PropTypes.object
+        message: PropTypes.array
     }
 
     constructor(){

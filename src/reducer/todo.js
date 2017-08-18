@@ -25,12 +25,12 @@ function todo(state, action) {
                     ...state.message,
                     action.message
                 ],
-                show: state.message
+                show: state.show
             }
         case CHANGE_STATUS:
             return{
                 message: state.message,
-                show: action.status
+                show: action.show
             }
         default:
             return state
