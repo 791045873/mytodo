@@ -1,32 +1,58 @@
 import React, {PropTypes, Component} from 'react'
-import showList from '../component/show'
-import statuControl from 'statuControl'
+import ShowList from '../component/showList'
+import {connect} from 'react-redux'
+import deleteMessage from '../reducer/todo'
 
-class showList extends Component{
+class ShowListContainer extends Component{
+    static defaultProps = {
+        message:[]
+    }
+
+    static PropTypes = {
+        deleteMessage: PropTypes.func,
+        message: PropTypes.array
+    }
+
     constructor(){
         super()
-    }
-
-    checkMessage() {
-        if (this.props.message) {
-            let Statu = this.props.message.show
-            let checkedMessage = []
-            this.props.message.message.forEach((e) => {
-                if (e.show === Statu) {
-                    checkedMessage.push(e)
-                }
-            })
-            return checkedMessage
+        this.state = {
+            message: []
         }
     }
-    render(){
-        return(
-            <div>
-                <showList message={this.checkMessage.bind(this)}/>
-            </div>
 
-        )
+    filterMessage() {
+        if (this.props.message) {
+            let Status = this.props.show
+            let filteredMessage = []
+            this.props.message.forEach((e) => {
+                if (e.show === Status) {
+                    filteredMessage.push(e)
+                }
+            })
+            return filteredMessage
+        }
+    }
+
+    componentWillMount(){
+        this.setState(this.filterMessage(this.props.message))
+    }
+
+    render(){
+        return  <ShowList message={this.state.message}/>
     }
 }
 
-export default showList
+const mapStateToProps = (state)=>{
+    return {
+        message: state.message
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        deleteMessage: (index)=>{dispatch(deleteMessage(index))}
+    }
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowListContainer)

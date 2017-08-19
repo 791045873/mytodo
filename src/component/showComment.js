@@ -11,8 +11,8 @@ class showComment extends Component{
     }
 
     handlerDelete(){
-        if(this.props.delete){
-            this.props.delete(this.props.index)
+        if(this.props.deleteMessage){
+            this.props.deleteMessage(this.props.index)
         }
     }
 

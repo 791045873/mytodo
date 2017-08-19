@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
-import inputComponent from '../component/input';
-import {add} from '../reducer/todo';
+import inputComponent from '../component/input'
+import add  from '../reducer/todo'
 import {connect} from 'react-redux'
 
 class inputContainer extends Component{
@@ -10,16 +10,14 @@ class inputContainer extends Component{
     }
 
     constructor(){
-        super(props)
-        this.state = {
-            message: ''
-        }
+        super()
     }
 
-    handleSubmit(){
-        if(this.props.submit){
-            this.props.submit(this.state.message)
+    handleSubmit(message){
+        if(!this.props.submit){
+            return
         }
+        this.props.submit(message)
     }
 
     render(){

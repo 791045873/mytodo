@@ -23,7 +23,7 @@ class input extends Component{
             return
         }
         if(this.props.submit){
-            this.props.submit(event.target.value)
+            this.props.submit(this.state.message)
         }
     }
 

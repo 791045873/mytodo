@@ -4,7 +4,7 @@ const ADD = 'ADD'
 const CHANGE_STATUS = 'CHANGE_STATUS'
 
 //reducer
-function todo(state, action) {
+function reducer(state, action) {
     if(!state){
         state = {
             message: [],
@@ -45,7 +45,7 @@ const add = (message)=>{
     }
 }
 
-const del = (index)=>{
+const deleteMessage = (index)=>{
     return {
         type: 'delete',
         index
@@ -59,5 +59,6 @@ const change_status = (status)=>{
     }
 }
 
-export default {add, del, change_status, todo}
+export default {add, deleteMessage, change_status, reducer};
+
 
