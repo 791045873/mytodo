@@ -20,15 +20,14 @@ class ShowListContainer extends Component{
         }
     }
 
-    filterMessage() {
-        if (this.props.message) {
-            let Status = this.props.show
-            if(Status === 'all'){
-                return this.props.message
+    filterMessage(message,show) {
+        if (message) {
+            if(show === 'all'){
+                return message
             }
             let filteredMessage = []
-            this.props.message.forEach((e) => {
-                if (e.show === Status) {
+            message.forEach((e) => {
+                if (e.show === show) {
                     filteredMessage.push(e)
                 }
             })
@@ -36,8 +35,8 @@ class ShowListContainer extends Component{
         }
     }
 
-    componentWillReceiveProps(){
-        let message = this.filterMessage(this.props.message)
+    componentWillReceiveProps(nextProps){
+        let message = this.filterMessage(nextProps.message,nextProps.show)
         this.setState({message})
     }
 

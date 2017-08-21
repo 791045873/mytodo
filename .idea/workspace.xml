@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c9ee07c-2d1c-4710-9b39-ff257735510f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/input.js" afterPath="$PROJECT_DIR$/src/component/input.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/showComment.js" afterPath="$PROJECT_DIR$/src/component/showComment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/showList.js" afterPath="$PROJECT_DIR$/src/component/showList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/inputContainer.js" afterPath="$PROJECT_DIR$/src/container/inputContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/showControlContainer.js" afterPath="$PROJECT_DIR$/src/container/showControlContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/container/showListContainer.js" afterPath="$PROJECT_DIR$/src/container/showListContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducer/todo.js" afterPath="$PROJECT_DIR$/src/reducer/todo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showListContainer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="showListContainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/container/showListContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="65" column="43" lean-forward="true" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+            <state relative-caret-position="483">
+              <caret line="38" column="74" lean-forward="true" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -125,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducer/todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+            <state relative-caret-position="126">
+              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -169,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/container/inputContainer.js" />
         <option value="$PROJECT_DIR$/src/component/showComment.js" />
         <option value="$PROJECT_DIR$/src/container/showControlContainer.js" />
-        <option value="$PROJECT_DIR$/src/container/showListContainer.js" />
         <option value="$PROJECT_DIR$/src/reducer/todo.js" />
+        <option value="$PROJECT_DIR$/src/container/showListContainer.js" />
       </list>
     </option>
   </component>
@@ -192,7 +185,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="49" />
     <option name="y" value="48" />
     <option name="width" value="1309" />
@@ -294,15 +287,15 @@
       <workItem from="1502850707146" duration="13046000" />
       <workItem from="1502937367103" duration="14172000" />
       <workItem from="1503105806176" duration="14544000" />
-      <workItem from="1503277377082" duration="5229000" />
+      <workItem from="1503277377082" duration="6952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46991000" />
+    <option name="totallyTimeSpent" value="48714000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22430556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -598,16 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/showControlContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/container/inputContainer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
@@ -618,21 +601,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/showListContainer.js">
+    <entry file="file://$PROJECT_DIR$/src/reducer/todo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="65" column="43" lean-forward="true" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
+        <state relative-caret-position="126">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/showControlContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducer/todo.js">
+    <entry file="file://$PROJECT_DIR$/src/container/showListContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-          <folding />
+        <state relative-caret-position="483">
+          <caret line="38" column="74" lean-forward="true" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
