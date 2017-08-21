@@ -63,6 +63,9 @@ const mapDispatchToProps = (dispatch)=>{
     return {
         deleteMessage: (index)=>{
             dispatch(deleteMessage.deleteMessage(index))
+        },
+        haveDone: (index)=>{
+            dispatch(deleteMessage.haveDone(index))
         }
     }
 

@@ -12,7 +12,7 @@ class ShowList extends Component{
             <div>
                 {
                     this.props.message.map((obj, index)=>(
-                        <ShowComment message={obj.message} index={index} key={index} deleteMessage={this.props.deleteMessage}/>
+                        <ShowComment message={obj.message} index={index} key={index} deleteMessage={this.props.deleteMessage} haveDone={this.props.haveDone}/>
                     ))
                 }
             </div>

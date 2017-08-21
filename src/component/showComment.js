@@ -12,11 +12,18 @@ class showComment extends Component{
         }
     }
 
+    handleDone(){
+        if(this.props.haveDone){
+            this.props.haveDone(this.props.index)
+        }
+    }
+
     render(){
         return(
             <div>
                 <p>{this.props.message}</p>
                 <button onClick={this.handlerDelete.bind(this)}>delete</button>
+                <button onClick={this.handleDone.bind(this)}>Done</button>
             </div>
         )
     }

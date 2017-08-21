@@ -2,6 +2,7 @@
 const DELETE = 'DELETE'
 const ADD = 'ADD'
 const CHANGE_STATUS = 'CHANGE_STATUS'
+const DONE = 'DONE'
 
 //reducer
 function reducer(state, action) {
@@ -32,6 +33,9 @@ function reducer(state, action) {
                 message: state.message,
                 show: action.show
             }
+        case DONE:
+            state.message[index].show = 'DONE'
+            return state
         default:
             return state
     }
@@ -59,6 +63,13 @@ const change_status = (status)=>{
     }
 }
 
-export default {add, deleteMessage, change_status, reducer};
+const haveDone = (index)=>{
+    return {
+        type: 'DONE',
+        index
+    }
+}
+
+export default {add, deleteMessage, change_status, reducer,haveDone};
 
 
