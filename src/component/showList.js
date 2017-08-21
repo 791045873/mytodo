@@ -7,18 +7,13 @@ class ShowList extends Component{
         deleteMessage: PropTypes.func
     }
 
-    constructor(){
-        super()
-
-    }
-
     render(){
         return (
             <div>
                 {
-                    this.props.message.forEach((obj, index)=>{
-                        return <ShowComment message={obj} index={index} deleteMessage={this.props.deleteMessage}/>
-                    })
+                    this.props.message.map((obj, index)=>(
+                        <ShowComment message={obj.message} index={index} key={index} deleteMessage={this.props.deleteMessage}/>
+                    ))
                 }
             </div>
         )

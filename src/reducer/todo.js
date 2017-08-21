@@ -14,8 +14,8 @@ function reducer(state, action) {
     switch (action.type){
         case DELETE:
             return {
-                message: [...state.message.slice(0, action.commentIndex),
-                    ...state.message.slice(action.commentIndex+1)
+                message: [...state.message.slice(0, action.index),
+                    ...state.message.slice(action.index+1)
                 ],
                 show: state.show
             }
@@ -47,7 +47,7 @@ const add = (message)=>{
 
 const deleteMessage = (index)=>{
     return {
-        type: 'delete',
+        type: 'DELETE',
         index
     }
 }

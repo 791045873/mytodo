@@ -29,7 +29,7 @@ class input extends Component{
 
     render(){
         return (
-            <input value={this.state.message} onChange={this.handleInput.bind(this)} onkeyup={this.handlerSubmit.bind(this)}/>
+            <input value={this.state.message} onChange={this.handleInput.bind(this)} onKeyUp={this.handlerSubmit.bind(this)}/>
         )
     }
 }

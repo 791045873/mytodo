@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react'
-import inputComponent from '../component/input'
+import InputComponent from '../component/input'
 import add  from '../reducer/todo'
 import {connect} from 'react-redux'
 
@@ -7,10 +7,6 @@ class inputContainer extends Component{
     static PropTypes = {
         submit: PropTypes.func,
         message: PropTypes.array
-    }
-
-    constructor(){
-        super()
     }
 
     handleSubmit(message){
@@ -22,7 +18,7 @@ class inputContainer extends Component{
 
     render(){
         return (
-            <inputComponent submit={this.handleSubmit.bind(this)}/>
+            <InputComponent submit={this.handleSubmit.bind(this)}/>
         )
     }
 }
@@ -34,7 +30,7 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=>{
     return {
         submit: (message)=>{
-            dispatch(add(message))
+            dispatch(add.add({message,show:'doing'}))
         }
     }
 }

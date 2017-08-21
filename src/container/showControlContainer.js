@@ -9,10 +9,6 @@ class ShowControlContainer extends Component{
         show: PropTypes.string
     }
 
-    constructor(){
-        super()
-    }
-
     handlerControl(status){
         if(status&&this.props.switchMessage){
             this.props.switchMessage(status)
@@ -32,7 +28,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        switchMessage: (status)=>{dispatch(change_status(status))}
+        switchMessage: (status)=>{dispatch(change_status.change_status(status))}
     }
 }
 

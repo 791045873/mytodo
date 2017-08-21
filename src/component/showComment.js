@@ -6,10 +6,6 @@ class showComment extends Component{
         delete: PropTypes.func
     }
 
-    constructor(){
-        super()
-    }
-
     handlerDelete(){
         if(this.props.deleteMessage){
             this.props.deleteMessage(this.props.index)
@@ -19,7 +15,7 @@ class showComment extends Component{
     render(){
         return(
             <div>
-                <p>{this.props.message.value}</p>
+                <p>{this.props.message}</p>
                 <button onClick={this.handlerDelete.bind(this)}>delete</button>
             </div>
         )

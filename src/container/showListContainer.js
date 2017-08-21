@@ -23,6 +23,9 @@ class ShowListContainer extends Component{
     filterMessage() {
         if (this.props.message) {
             let Status = this.props.show
+            if(Status === 'all'){
+                return this.props.message
+            }
             let filteredMessage = []
             this.props.message.forEach((e) => {
                 if (e.show === Status) {
@@ -33,24 +36,35 @@ class ShowListContainer extends Component{
         }
     }
 
-    componentWillMount(){
-        this.setState(this.filterMessage(this.props.message))
+    componentWillReceiveProps(){
+        let message = this.filterMessage(this.props.message)
+        this.setState({message})
+    }
+
+    handleDeleteMessage(index){
+        if(this.props.deleteMessage){
+            this.props.deleteMessage(index)
+        }
     }
 
     render(){
-        return  <ShowList message={this.state.message}/>
+        return  <ShowList message={this.state.message} deleteMessage={this.handleDeleteMessage.bind(this)}/>
     }
 }
 
 const mapStateToProps = (state)=>{
     return {
-        message: state.message
+        message: state.message,
+        show: state.show
     }
 }
 
 const mapDispatchToProps = (dispatch)=>{
+    console.log(deleteMessage);
     return {
-        deleteMessage: (index)=>{dispatch(deleteMessage(index))}
+        deleteMessage: (index)=>{
+            dispatch(deleteMessage.deleteMessage(index))
+        }
     }
 
 }
