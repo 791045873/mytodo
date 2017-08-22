@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import InputComponent from '../component/input'
-import add  from '../reducer/todo'
+import {add } from '../reducer/todo'
 import {connect} from 'react-redux'
 
 class inputContainer extends Component{
@@ -30,7 +30,7 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch)=>{
     return {
         submit: (message)=>{
-            dispatch(add.add({message,show:'doing'}))
+            dispatch(add({message,show:'DOING'}))
         }
     }
 }

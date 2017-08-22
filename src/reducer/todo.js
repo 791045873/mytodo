@@ -3,13 +3,14 @@ const DELETE = 'DELETE'
 const ADD = 'ADD'
 const CHANGE_STATUS = 'CHANGE_STATUS'
 const DONE = 'DONE'
+const DOING = 'DOING'
 
 //reducer
 function reducer(state, action) {
     if(!state){
         state = {
             message: [],
-            show: 'all'
+            show: 'ALL'
         }
     }
     switch (action.type){
@@ -34,8 +35,12 @@ function reducer(state, action) {
                 show: action.show
             }
         case DONE:
-            state.message[index].show = 'DONE'
+            state.message[action.index].show = 'DONE'
             return state
+        case DOING:
+            state.message[action.index].show =  'DOING'
+            return state
+
         default:
             return state
     }
@@ -56,20 +61,28 @@ const deleteMessage = (index)=>{
     }
 }
 
-const change_status = (status)=>{
+const change_status = (show)=>{
     return {
         type: 'CHANGE_STATUS',
-        status
+        show
     }
 }
 
-const haveDone = (index)=>{
-    return {
-        type: 'DONE',
-        index
+const done = (index,show)=>{
+    if(show === 'DONE'){
+        return {
+            type: 'DONE',
+            index
+        }
+    }
+    if(show === 'DOING'){
+        return {
+            type: 'DOING',
+            index
+        }
     }
 }
 
-export default {add, deleteMessage, change_status, reducer,haveDone};
+export {add, deleteMessage, change_status, reducer, done};
 
 

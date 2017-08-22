@@ -1,6 +1,6 @@
 import ShowControl from '../component/showControl'
 import React, {PropTypes, Component} from 'react'
-import change_status from '../reducer/todo'
+import {change_status} from '../reducer/todo'
 import {connect} from 'react-redux'
 
 class ShowControlContainer extends Component{
@@ -28,7 +28,7 @@ const mapStateToProps=(state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        switchMessage: (status)=>{dispatch(change_status.change_status(status))}
+        switchMessage: (status)=>{dispatch(change_status(status))}
     }
 }
 

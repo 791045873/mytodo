@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react'
-import ShowList from '../component/showList'
 import {connect} from 'react-redux'
-import deleteMessage from '../reducer/todo'
+import {deleteMessage,done} from '../reducer/todo'
+import ShowComment from '../component/showComment'
 
 class ShowListContainer extends Component{
     static defaultProps = {
@@ -10,6 +10,7 @@ class ShowListContainer extends Component{
 
     static PropTypes = {
         deleteMessage: PropTypes.func,
+        done: PropTypes.func,
         message: PropTypes.array
     }
 
@@ -22,7 +23,7 @@ class ShowListContainer extends Component{
 
     filterMessage(message,show) {
         if (message) {
-            if(show === 'all'){
+            if(show === 'ALL'){
                 return message
             }
             let filteredMessage = []
@@ -36,8 +37,15 @@ class ShowListContainer extends Component{
     }
 
     componentWillReceiveProps(nextProps){
+        console.log('componentWillReceiveProps')
         let message = this.filterMessage(nextProps.message,nextProps.show)
         this.setState({message})
+    }
+
+    shouldComponentUpdate(nextProps){
+        let message = this.filterMessage(nextProps.message,nextProps.show)
+        this.setState({message})
+        return true
     }
 
     handleDeleteMessage(index){
@@ -46,9 +54,26 @@ class ShowListContainer extends Component{
         }
     }
 
-    render(){
-        return  <ShowList message={this.state.message} deleteMessage={this.handleDeleteMessage.bind(this)}/>
+    handleDone(index,show){
+        if(this.props.done){
+            this.props.done(index,show)
+        }
+        console.log('showListContainer handleDone')
+        console.log(this.props)
     }
+
+    render(){
+        console.log("showListContainer: ")
+        console.log(this.props)
+        return  (
+            <div>
+                {
+                    this.props.message.map((obj, index)=>(
+                        <ShowComment message={obj.message} show={obj.show} index={index} key={index} deleteMessage={this.handleDeleteMessage.bind(this)} done={this.handleDone.bind(this)}/>
+                    ))
+                }
+            </div>
+        )}
 }
 
 const mapStateToProps = (state)=>{
@@ -59,13 +84,15 @@ const mapStateToProps = (state)=>{
 }
 
 const mapDispatchToProps = (dispatch)=>{
-    console.log(deleteMessage);
+    console.log(deleteMessage,done);
     return {
         deleteMessage: (index)=>{
-            dispatch(deleteMessage.deleteMessage(index))
+            dispatch(deleteMessage(index))
         },
-        haveDone: (index)=>{
-            dispatch(deleteMessage.haveDone(index))
+        done: (index,show)=>{
+            //传递的是原始状态,可是期望的参数是变化后的状态
+            show === 'DOING'?show='DONE':show='DOING'
+            dispatch(done(index,show))
         }
     }
 

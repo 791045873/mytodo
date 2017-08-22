@@ -14,12 +14,12 @@ class ShowControl extends Component{
         if(!this.props.handlerControl){
             return
         }
-        switch (event.target.value){
+        switch (event.target.textContent){
             case 'ALL':
                 this.props.handlerControl('ALL');
                 break;
-            case 'COMPELETED':
-                this.props.handlerControl('COMPELETED')
+            case 'DONE':
+                this.props.handlerControl('DONE')
                 break;
             case 'DOING':
                 this.props.handlerControl('DOING')
@@ -34,7 +34,7 @@ class ShowControl extends Component{
         return (
             <div onClick={this.handlerSwitch.bind(this)} >
                 <button>ALL</button>
-                <button>COMPELETED</button>
+                <button>DONE</button>
                 <button>DOING</button>
             </div>
         )
