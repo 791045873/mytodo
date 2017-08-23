@@ -37,15 +37,13 @@ class ShowListContainer extends Component{
     }
 
     componentWillReceiveProps(nextProps){
-        console.log('componentWillReceiveProps')
         let message = this.filterMessage(nextProps.message,nextProps.show)
         this.setState({message})
     }
 
-    shouldComponentUpdate(nextProps){
-        let message = this.filterMessage(nextProps.message,nextProps.show)
+    componentWillMount(){
+        let message = this.filterMessage(this.props.message,this.props.show)
         this.setState({message})
-        return true
     }
 
     handleDeleteMessage(index){
@@ -58,17 +56,13 @@ class ShowListContainer extends Component{
         if(this.props.done){
             this.props.done(index,show)
         }
-        console.log('showListContainer handleDone')
-        console.log(this.props)
     }
 
     render(){
-        console.log("showListContainer: ")
-        console.log(this.props)
         return  (
             <div>
                 {
-                    this.props.message.map((obj, index)=>(
+                    this.state.message.map((obj, index)=>(
                         <ShowComment message={obj.message} show={obj.show} index={index} key={index} deleteMessage={this.handleDeleteMessage.bind(this)} done={this.handleDone.bind(this)}/>
                     ))
                 }

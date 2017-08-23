@@ -1,9 +1,9 @@
 // action type
-const DELETE = 'DELETE'
-const ADD = 'ADD'
-const CHANGE_STATUS = 'CHANGE_STATUS'
-const DONE = 'DONE'
-const DOING = 'DOING'
+const DELETE = 'DELETE';
+const ADD = 'ADD';
+const CHANGE_STATUS = 'CHANGE_STATUS';
+const DONE = 'DONE';
+const DOING = 'DOING';
 
 //reducer
 function reducer(state, action) {
@@ -20,7 +20,7 @@ function reducer(state, action) {
                     ...state.message.slice(action.index+1)
                 ],
                 show: state.show
-            }
+            };
         case ADD:
             return {
                 message: [
@@ -28,18 +28,18 @@ function reducer(state, action) {
                     action.message
                 ],
                 show: state.show
-            }
+            };
         case CHANGE_STATUS:
             return{
                 message: state.message,
                 show: action.show
-            }
+            };
         case DONE:
-            state.message[action.index].show = 'DONE'
-            return state
+            state.message[action.index].show = DONE;
+            return state;
         case DOING:
-            state.message[action.index].show =  'DOING'
-            return state
+            state.message[action.index].show =  DOING;
+            return state;
 
         default:
             return state
@@ -52,36 +52,28 @@ const add = (message)=>{
         type: 'ADD',
         message
     }
-}
+};
 
 const deleteMessage = (index)=>{
     return {
         type: 'DELETE',
         index
     }
-}
+};
 
 const change_status = (show)=>{
     return {
         type: 'CHANGE_STATUS',
         show
     }
-}
+};
 
 const done = (index,show)=>{
-    if(show === 'DONE'){
-        return {
-            type: 'DONE',
-            index
-        }
+    return {
+        type: show,
+        index
     }
-    if(show === 'DOING'){
-        return {
-            type: 'DOING',
-            index
-        }
-    }
-}
+};
 
 export {add, deleteMessage, change_status, reducer, done};
 

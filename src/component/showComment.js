@@ -19,13 +19,6 @@ class showComment extends Component{
         }
     }
 
-    shouldComponentUpdate(nextProps){
-        if(nextProps.show){
-            this.showText(nextProps.show)
-        }
-        return true
-    }
-
     componentWillMount(){
         this.showText(this.props.show)
     }
@@ -45,14 +38,15 @@ class showComment extends Component{
     handleDone(){
         if(this.props.done){
             this.props.done(this.props.index,this.props.show)
+            if(this.props.show === 'DONE'){
+                this.showText('DOING')
+            }else {
+                this.showText('DONE')
+            }
         }
-        console.log('showComment handleDone')
-        console.log(this.props)
     }
 
     render(){
-        console.log("showComment: " + this.props)
-        console.log(this.props)
         return(
             <div>
                 <p>{this.props.message}</p>
